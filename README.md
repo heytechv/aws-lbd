@@ -273,7 +273,10 @@ Okej, teraz zawartosc pliku mavena<br/>
 </project>
 ```
 
-### 4. AWS (create bucket)
+### 4. Build
+`mvn clean package`
+
+### 5. AWS (create bucket)
 *1_bucket_S3_create.bat:*
 ```bat
 :: https://lobster1234.github.io/2017/04/05/working-with-localstack-command-line/
@@ -289,7 +292,7 @@ aws s3 mb s3://testbucket --endpoint-url=http://localhost:4566 --region eu-centr
 aws --endpoint-url=http://localhost:4566 --region eu-central-1 s3 ls
 ```
 
-### 5. AWS (create lambda)
+### 6. AWS (create lambda)
 *2_lambda_create.bat:*
 ```bat
 :: https://codetinkering.com/localstack-s3-lambda-example-docker/
@@ -298,7 +301,7 @@ aws lambda create-function --endpoint-url http://localhost:4566 --function-name 
 ```
 Paramatery:<br/>
 - `--function-name processCsv` - jak ma sie nazywac nasza funkcja na aws(localstack)
-- `--runtime java8` - java8/java11
+- `--runtime java11` - java8/java11
 - `--handler fislottoaws.BucketHandler` - klasa handler
 - `--zip-file fileb:sciezka_do_naszego_pliku.zip` - wygenerowany zip
 
@@ -340,7 +343,7 @@ _______________________________________
 aws lambda delete-function --endpoint-url http://localhost:4566 --function-name processCsv
 ```
 
-### 6. AWS (register event)
+### 7. AWS (register event)
 Potrzebujemy plik z podpunktu wyzej, wywolujemy:<br/>
 *3_event_register.bat:*
 ```bat
@@ -349,7 +352,7 @@ aws s3api put-bucket-notification-configuration --bucket testbucket --notificati
 Parametry:
 - `--notification-configuration file://../s3hook.json` - tutaj nasz plik z podpunktu wyzej
 
-### 7. AWS (lambda invoke/call)
+### 8. AWS (lambda invoke/call)
 Super. Mamy wszystko, teraz mozemy przetestowac nasz event BucketHandler wysylajac plik na server aws/localstack.<br/>
 Tworzymy plik np. *samplefile.txt* i wywolujemy:<br/>
 *4_lambda_invoke.bat:*
@@ -359,7 +362,7 @@ aws s3 cp ../samplefile.txt s3://testbucket/samplefile.txt --endpoint-url http:/
 Parametry:
 - `../samplefile.txt s3://testbucket/samplefile.txt` - sciezka do naszego pliku lokalnie oraz sciezka gdzie ma byc (w jakim bucket) na serwerze
 
-### 8. View file using browser (Optional)
+### 9. View file using browser (Optional)
 `http://localhost:4566/testbucket/samplefile.txt`
 
 
