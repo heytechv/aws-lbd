@@ -1,0 +1,7 @@
+Zadanie
+
+Napisać funkcje lambda, która będzie konsumować plik z S3 (CSV), mapowować do formatu JSON i przekazywać na SQS.
+
+Co zawiera plik:
+plik ma zawierac kupon totka: czyli 6 kolumn liczb w zakresie 1-49 które się nie powtarzaja
+plik moze zawierać wiele wierszy (czyli zakładów pojedynczych) na cały kupon

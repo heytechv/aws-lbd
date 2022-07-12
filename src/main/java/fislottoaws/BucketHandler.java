@@ -21,6 +21,9 @@ import java.io.InputStreamReader;
 
 public class BucketHandler implements RequestHandler<S3Event, Void> {
 
+    public final String AWS_REGION = "eu-central-1";
+    public final String S3_ENDPOINT = "http://localstack:4566";
+
     @Override public Void handleRequest(S3Event s3Event, Context context) {
 
         LambdaLogger logger = context.getLogger();
@@ -28,11 +31,10 @@ public class BucketHandler implements RequestHandler<S3Event, Void> {
         String bucket = s3Event.getRecords().get(0).getS3().getBucket().getName();
         String key = s3Event.getRecords().get(0).getS3().getObject().getKey();
 
-        AmazonS3 s3Client = AmazonS3ClientBuilder.defaultClient();
+        AmazonS3 bucketClient = prepareBucketClient();
 
-        S3Object obj = prepareS3().getObject(new GetObjectRequest(bucket, key));
+        S3Object obj = bucketClient.getObject(new GetObjectRequest(bucket, key));
         try (InputStream stream = obj.getObjectContent()) {
-            // TODO: Do something with the file contents here
 
             BufferedReader br = new BufferedReader(new InputStreamReader(stream));
             String line="";
@@ -41,26 +43,19 @@ public class BucketHandler implements RequestHandler<S3Event, Void> {
 
 
         } catch (IOException ioe) {
-            //throw ioe;
             ioe.printStackTrace();
         }
 
         return null;
-
     }
-    public final String AWS_REGION = "eu-central-1";
-    public final String S3_ENDPOINT = "http://localstack:4566";
 
-    private AmazonS3 prepareS3() {
-        BasicAWSCredentials credentials = new BasicAWSCredentials("foo", "bar");
-
-        AwsClientBuilder.EndpointConfiguration config =
-                new AwsClientBuilder.EndpointConfiguration(S3_ENDPOINT, AWS_REGION);
+    private AmazonS3 prepareBucketClient() {
+        AwsClientBuilder.EndpointConfiguration config = new AwsClientBuilder.EndpointConfiguration(S3_ENDPOINT, AWS_REGION);
 
         AmazonS3ClientBuilder builder = AmazonS3ClientBuilder.standard();
         builder.withEndpointConfiguration(config);
         builder.withPathStyleAccessEnabled(true);
-        builder.withCredentials(new AWSStaticCredentialsProvider(credentials));
+        builder.withCredentials(new AWSStaticCredentialsProvider(new BasicAWSCredentials("foo", "bar")));
         return builder.build();
     }
 }

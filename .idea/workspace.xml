@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c64b4e80-753a-42a4-8c65-60c09f1ee4c4" name="Changes" comment="still base - java lambda handler aws/localstack + readme4">
+    <list default="true" id="c64b4e80-753a-42a4-8c65-60c09f1ee4c4" name="Changes" comment="still base - java lambda handler aws/localstack + readme5">
+      <change afterPath="$PROJECT_DIR$/zad1.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fislottoaws/BucketHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fislottoaws/BucketHandler.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -14,6 +15,11 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -62,7 +68,7 @@
       <option name="presentableId" value="Default" />
       <updated>1657636968905</updated>
       <workItem from="1657636970820" duration="201000" />
-      <workItem from="1657637241332" duration="2457000" />
+      <workItem from="1657637241332" duration="2712000" />
     </task>
     <task id="LOCAL-00001" summary="still base - jave handler aws/localstack">
       <created>1657638130111</created>
@@ -106,7 +112,14 @@
       <option name="project" value="LOCAL" />
       <updated>1657639370541</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="still base - java lambda handler aws/localstack + readme5">
+      <created>1657639721387</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1657639721387</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -130,6 +143,7 @@
     <MESSAGE value="still base - java lambda handler aws/localstack + readme2" />
     <MESSAGE value="still base - java lambda handler aws/localstack + readme3" />
     <MESSAGE value="still base - java lambda handler aws/localstack + readme4" />
-    <option name="LAST_COMMIT_MESSAGE" value="still base - java lambda handler aws/localstack + readme4" />
+    <MESSAGE value="still base - java lambda handler aws/localstack + readme5" />
+    <option name="LAST_COMMIT_MESSAGE" value="still base - java lambda handler aws/localstack + readme5" />
   </component>
 </project>
