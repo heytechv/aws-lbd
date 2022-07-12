@@ -18,7 +18,7 @@ services:
           - AWS_SECRET_ACCESS_KEY=bar
           - EDGE_PORT=4566
           - DOCKER_HOST=unix:///var/run/docker.sock
-          - LAMBDA_DOCKER_NETWORK=lottocode_default
+          - LAMBDA_DOCKER_NETWORK=aws-lbd_default
           - HOSTNAME_EXTERNAL=localstack
           - DATA_DIR=/tmp/localstack
           - LAMBDA_REMOTE_DOCKER=true

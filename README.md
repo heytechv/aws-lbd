@@ -9,32 +9,32 @@ Potrzebujemy localstack
 version: "3.8"
 
 services:
-  localstack:
-    image: localstack/localstack:latest
-    ports:
-      - "4566:4566"
-      - "4569:4569"
-      - "4571:4571"
-      - "4572:4572"
-      - "4574:4574"
-      - "8080:8080"
-    environment:
-      - SERVICES=s3,lambda,serverless,sqs
-      - DEBUG=1
-      - AWS_DEFAULT_REGION=eu-central-1
-      - AWS_ACCESS_KEY_ID=foo
-      - AWS_SECRET_ACCESS_KEY=bar
-      - EDGE_PORT=4566
-      - DOCKER_HOST=unix:///var/run/docker.sock
-      - LAMBDA_DOCKER_NETWORK=lottocode_default
-      - HOSTNAME_EXTERNAL=localstack
-      - DATA_DIR=/tmp/localstack
-      - LAMBDA_REMOTE_DOCKER=true
-    volumes:
-      - "./docker_tmp:/tmp/localstack"
-      - "/var/run/docker.sock:/var/run/docker.sock"
+ localstack:
+  image: localstack/localstack:latest
+  ports:
+   - "4566:4566"
+   - "4569:4569"
+   - "4571:4571"
+   - "4572:4572"
+   - "4574:4574"
+   - "8080:8080"
+  environment:
+   - SERVICES=s3,lambda,serverless,sqs
+   - DEBUG=1
+   - AWS_DEFAULT_REGION=eu-central-1
+   - AWS_ACCESS_KEY_ID=foo
+   - AWS_SECRET_ACCESS_KEY=bar
+   - EDGE_PORT=4566
+   - DOCKER_HOST=unix:///var/run/docker.sock
+   - LAMBDA_DOCKER_NETWORK=aws-lbd_default
+   - HOSTNAME_EXTERNAL=localstack
+   - DATA_DIR=/tmp/localstack
+   - LAMBDA_REMOTE_DOCKER=true
+  volumes:
+   - "./docker_tmp:/tmp/localstack"
+   - "/var/run/docker.sock:/var/run/docker.sock"
 ```
-Docker domyslnie tworzy siec, ktor ma nazwe:<br/>
+Docker domyslnie tworzy siec, ktora ma nazwe:<br/>
 `katalogpowyzejgdziedocker_default`
 <br/>Dlatego:<br/>
 `LAMBDA_DOCKER_NETWORK=katalogpowyzejgdziedocker_default`
@@ -177,8 +177,8 @@ pom.xml
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <maven.compiler.source>1.8</maven.compiler.source>
-        <maven.compiler.target>1.8</maven.compiler.target>
+        <maven.compiler.source>11</maven.compiler.source>
+        <maven.compiler.target>11</maven.compiler.target>
     </properties>
 
     <dependencies>
@@ -283,7 +283,7 @@ aws --endpoint-url=http://localhost:4566 --region eu-central-1 s3 ls
 ```bat
 :: https://codetinkering.com/localstack-s3-lambda-example-docker/
 
-aws lambda create-function --endpoint-url http://localhost:4566 --function-name processCsv --runtime java8 --handler fislottoaws.BucketHandler --region eu-central-1 --zip-file fileb://C:\Users\mwlocka\fis_sst_staz_4_aws\lottocode\target\java-basic-1.0-SNAPSHOT-lambda_deployment_package_assembly.zip --role arn:aws:iam::12345:role/ignoreme
+aws lambda create-function --endpoint-url http://localhost:4566 --function-name processCsv --runtime java11 --handler fislottoaws.BucketHandler --region eu-central-1 --zip-file fileb://..\target\java-basic-1.0-SNAPSHOT-lambda_deployment_package_assembly.zip --role arn:aws:iam::12345:role/ignoreme
 ```
 Paramatery:<br/>
 - `--function-name processCsv` - jak ma sie nazywac nasza funkcja na aws(localstack)
