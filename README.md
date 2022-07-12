@@ -1,3 +1,8 @@
+### Base project template for Java + localstack/aws in docker
+### Project contains client side
+#### - basic sending file to bucket
+### and localstack/aws side
+#### - handling it using lambda (Java)
 
 ## Docker/localhost
 ### 1. Instalujemy AWS CLI (localhost)

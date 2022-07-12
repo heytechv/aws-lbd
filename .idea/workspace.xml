@@ -4,26 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c64b4e80-753a-42a4-8c65-60c09f1ee4c4" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/aws.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/aws_cmds/1_bucket_S3_create.bat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/aws_cmds/1a_bucket_S3_list.bat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/aws_cmds/2_lambda_create.bat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/aws_cmds/2_lambda_delete.bat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/aws_cmds/3_event_register.bat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/aws_cmds/4_lambda_invoke.bat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/s3hook.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/samplefile.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assembly/lambda_deployment_package_assembly.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/fislottoaws/BucketHandler.java" afterDir="false" />
+    <list default="true" id="c64b4e80-753a-42a4-8c65-60c09f1ee4c4" name="Changes" comment="still base - jave handler aws/localstack">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -79,8 +62,16 @@
       <option name="presentableId" value="Default" />
       <updated>1657636968905</updated>
       <workItem from="1657636970820" duration="201000" />
-      <workItem from="1657637241332" duration="780000" />
+      <workItem from="1657637241332" duration="1261000" />
     </task>
+    <task id="LOCAL-00001" summary="still base - jave handler aws/localstack">
+      <created>1657638130111</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1657638130111</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -96,5 +87,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="still base - jave handler aws/localstack" />
+    <option name="LAST_COMMIT_MESSAGE" value="still base - jave handler aws/localstack" />
   </component>
 </project>
