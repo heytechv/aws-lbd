@@ -1,0 +1,11 @@
+{
+  "LambdaFunctionConfigurations": [
+    {
+      "Id": "1234567890123",
+      "LambdaFunctionArn": "arn:aws:lambda:eu-central-1:000000000000:function:processCsv",
+      "Events": [
+        "s3:ObjectCreated:*"
+      ]
+    }
+  ]
+}

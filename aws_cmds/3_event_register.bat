@@ -1,0 +1,1 @@
+aws s3api put-bucket-notification-configuration --bucket testbucket --notification-configuration file://../s3hook.json --endpoint-url http://localhost:4566 --region eu-central-1

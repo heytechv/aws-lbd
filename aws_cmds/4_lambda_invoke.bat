@@ -1,0 +1,1 @@
+aws s3 cp ../samplefile.txt s3://testbucket/samplefile.txt --endpoint-url http://localhost:4566 --region eu-central-1
