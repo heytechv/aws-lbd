@@ -52,6 +52,9 @@ Docker domyslnie tworzy siec, ktora ma nazwe:<br/>
 <br/>Nasz przyszly plik javowy (ktory stworzymy nizej) localstack uruchamia w osobnym dockerze, dlatego musimy temu nowemu kontenerowi pokazac jakie bedzie ip localstacka:<br/>
 `HOSTNAME_EXTERNAL=localstack`
 
+### 3. Run docker
+`docker compose up`
+
 ## Java (Bucket Event Handler)
 ### UWAGA! localstack wymaga .zip pliku, w ktorym znajduje sie katalog lib z zaleznosciami oraz sciezka z nasza klasa (co i jak jest opisane ponizej).
 
