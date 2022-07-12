@@ -88,6 +88,7 @@ public class BucketHandler implements RequestHandler<S3Event, String> {
         logger.log(jsonResult+"\n");
 
         // Send to SQS queue
+        logger.log("Wysylam na kolejke SQS...\n");
         String sqsMainUrl = SQSHelper.createSQSifNeeded(sqs, Config.SQS_MAIN_NAME);
         SQSHelper.send(sqs, sqsMainUrl, jsonResult);
 

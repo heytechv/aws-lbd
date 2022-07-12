@@ -4,22 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c64b4e80-753a-42a4-8c65-60c09f1ee4c4" name="Changes" comment="zad1">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/aws_cmds/sqs_create.bat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/aws_cmds/sqs_delete.bat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/aws_cmds/sqs_receive.bat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/aws_cmds/sqs_send.bat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/kupon.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/fislottoaws/Config.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/fislottoaws/Kupon.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/fislottoaws/S3BucketHelper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/fislottoaws/SQSHelper.java" afterDir="false" />
+    <list default="true" id="c64b4e80-753a-42a4-8c65-60c09f1ee4c4" name="Changes" comment="zad1 - kolejka SQS dziala (tworzy gdy nie istnieje)">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/aws_cmds/4_lambda_invoke.bat" beforeDir="false" afterPath="$PROJECT_DIR$/aws_cmds/4_lambda_invoke.bat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/samplefile.txt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/fislottoaws/BucketHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fislottoaws/BucketHandler.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -89,7 +75,7 @@
       <option name="presentableId" value="Default" />
       <updated>1657636968905</updated>
       <workItem from="1657636970820" duration="201000" />
-      <workItem from="1657637241332" duration="12304000" />
+      <workItem from="1657637241332" duration="13010000" />
     </task>
     <task id="LOCAL-00001" summary="still base - jave handler aws/localstack">
       <created>1657638130111</created>
@@ -147,7 +133,14 @@
       <option name="project" value="LOCAL" />
       <updated>1657640011299</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="zad1 - kolejka SQS dziala (tworzy gdy nie istnieje)">
+      <created>1657650562731</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1657650562731</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -173,6 +166,7 @@
     <MESSAGE value="still base - java lambda handler aws/localstack + readme4" />
     <MESSAGE value="still base - java lambda handler aws/localstack + readme5" />
     <MESSAGE value="zad1" />
-    <option name="LAST_COMMIT_MESSAGE" value="zad1" />
+    <MESSAGE value="zad1 - kolejka SQS dziala (tworzy gdy nie istnieje)" />
+    <option name="LAST_COMMIT_MESSAGE" value="zad1 - kolejka SQS dziala (tworzy gdy nie istnieje)" />
   </component>
 </project>
