@@ -334,7 +334,6 @@ Tworzymy plik, ktory bedzie sluzyl do zarejestrowania eventu, o nazwie np. *s3ho
 
 _______________________________________
 (Jako ciekawostka daje plik do usuwania stworzonej wczesniej funkcji *2_lambda_delete.bat:*)
-
 ```bat
 :: https://codetinkering.com/localstack-s3-lambda-example-docker/
 
@@ -343,7 +342,7 @@ aws lambda delete-function --endpoint-url http://localhost:4566 --function-name 
 
 ### 6. AWS (register event)
 Potrzebujemy plik z podpunktu wyzej, wywolujemy:<br/>
-*3_event_register.bat*
+*3_event_register.bat:*
 ```bat
 aws s3api put-bucket-notification-configuration --bucket testbucket --notification-configuration file://../s3hook.json --endpoint-url http://localhost:4566 --region eu-central-1
 ```
@@ -353,14 +352,14 @@ Parametry:
 ### 7. AWS (lambda invoke/call)
 Super. Mamy wszystko, teraz mozemy przetestowac nasz event BucketHandler wysylajac plik na server aws/localstack.<br/>
 Tworzymy plik np. *samplefile.txt* i wywolujemy:<br/>
-*4_lambda_invoke.bat*
+*4_lambda_invoke.bat:*
 ```bat
 aws s3 cp ../samplefile.txt s3://testbucket/samplefile.txt --endpoint-url http://localhost:4566 --region eu-central-1
 ```
 Parametry:
 - `../samplefile.txt s3://testbucket/samplefile.txt` - sciezka do naszego pliku lokalnie oraz sciezka gdzie ma byc (w jakim bucket) na serwerze
 
-### 7. View file using browser
+### 8. View file using browser (Optional)
 `http://localhost:4566/testbucket/samplefile.txt`
 
 
