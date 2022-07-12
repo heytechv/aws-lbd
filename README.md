@@ -4,6 +4,12 @@
 ### and localstack/aws side
 #### - handling it using lambda (Java)
 
+<br/>
+
+### How project works
+We create bucket `testbucket` (in localstack/aws) which can store files. By sending file to our `testbucket` we activate event which calls our lambda function wrote in Java.
+_____________
+
 ## Docker/localhost
 ### 1. Instalujemy AWS CLI (localhost)
 Instalujemy `aws cli` na swoim kompie (bedziemy komendami sie laczyc z aws/localstack na dockerze).
@@ -353,6 +359,10 @@ aws s3 cp ../samplefile.txt s3://testbucket/samplefile.txt --endpoint-url http:/
 ```
 Parametry:
 - `../samplefile.txt s3://testbucket/samplefile.txt` - sciezka do naszego pliku lokalnie oraz sciezka gdzie ma byc (w jakim bucket) na serwerze
+
+### 7. View file using browser
+`http://localhost:4566/testbucket/samplefile.txt`
+
 
 # FAQ
 1. Mam blad w dockerze `java.lang.NoClassDefFoundError` lub `ClassNotFoundException`
