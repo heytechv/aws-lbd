@@ -4,8 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c64b4e80-753a-42a4-8c65-60c09f1ee4c4" name="Changes" comment="still base - java lambda handler aws/localstack + readme">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="c64b4e80-753a-42a4-8c65-60c09f1ee4c4" name="Changes" comment="still base - java lambda handler aws/localstack + readme2">
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -62,7 +61,7 @@
       <option name="presentableId" value="Default" />
       <updated>1657636968905</updated>
       <workItem from="1657636970820" duration="201000" />
-      <workItem from="1657637241332" duration="1742000" />
+      <workItem from="1657637241332" duration="1832000" />
     </task>
     <task id="LOCAL-00001" summary="still base - jave handler aws/localstack">
       <created>1657638130111</created>
@@ -85,7 +84,14 @@
       <option name="project" value="LOCAL" />
       <updated>1657638880456</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="still base - java lambda handler aws/localstack + readme2">
+      <created>1657639003548</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1657639003548</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -106,6 +112,7 @@
     <MESSAGE value="still base - jave handler aws/localstack" />
     <MESSAGE value="still base - java lambda handler aws/localstack" />
     <MESSAGE value="still base - java lambda handler aws/localstack + readme" />
-    <option name="LAST_COMMIT_MESSAGE" value="still base - java lambda handler aws/localstack + readme" />
+    <MESSAGE value="still base - java lambda handler aws/localstack + readme2" />
+    <option name="LAST_COMMIT_MESSAGE" value="still base - java lambda handler aws/localstack + readme2" />
   </component>
 </project>

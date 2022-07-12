@@ -175,7 +175,7 @@ Tworzymy plik `src/assembly/lambda_deployment_package_assembly.xml`.<br/>
 </assembly>
 ```
 Okej, teraz zawartosc pliku mavena<br/>
-pom.xml
+*pom.xml:*
 ```xml
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
