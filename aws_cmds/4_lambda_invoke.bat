@@ -1,1 +1,1 @@
-aws s3 cp ../samplefile.txt s3://testbucket/samplefile.txt --endpoint-url http://localhost:4566 --region eu-central-1
+aws s3 cp ../kupon.csv s3://testbucket/kupon.csv --endpoint-url http://localhost:4566 --region eu-central-1

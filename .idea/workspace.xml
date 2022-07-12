@@ -4,15 +4,35 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c64b4e80-753a-42a4-8c65-60c09f1ee4c4" name="Changes" comment="still base - java lambda handler aws/localstack + readme5">
-      <change afterPath="$PROJECT_DIR$/zad1.txt" afterDir="false" />
+    <list default="true" id="c64b4e80-753a-42a4-8c65-60c09f1ee4c4" name="Changes" comment="zad1">
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/aws_cmds/sqs_create.bat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/aws_cmds/sqs_delete.bat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/aws_cmds/sqs_receive.bat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/aws_cmds/sqs_send.bat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/kupon.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/fislottoaws/Config.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/fislottoaws/Kupon.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/fislottoaws/S3BucketHelper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/fislottoaws/SQSHelper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aws_cmds/4_lambda_invoke.bat" beforeDir="false" afterPath="$PROJECT_DIR$/aws_cmds/4_lambda_invoke.bat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/samplefile.txt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/fislottoaws/BucketHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fislottoaws/BucketHandler.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
@@ -46,12 +66,13 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/mwlocka/fis_sst_staz_4_aws/kodNowy_github/aws-lbd",
+    "last_opened_file_path": "C:/Users/mwlocka/fis_sst_staz_4_aws/kodNowy_github/aws-lbd/aws_cmds",
     "nodejs_package_manager_path": "npm"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\mwlocka\fis_sst_staz_4_aws\kodNowy_github\aws-lbd\aws_cmds" />
       <recent name="C:\Users\mwlocka\fis_sst_staz_4_aws\kodNowy_github\aws-lbd\aws-lbd" />
       <recent name="C:\Users\mwlocka\fis_sst_staz_4_aws\kodNowy_github\aws-lbd\aws-lbd\src" />
     </key>
@@ -68,7 +89,7 @@
       <option name="presentableId" value="Default" />
       <updated>1657636968905</updated>
       <workItem from="1657636970820" duration="201000" />
-      <workItem from="1657637241332" duration="2712000" />
+      <workItem from="1657637241332" duration="12304000" />
     </task>
     <task id="LOCAL-00001" summary="still base - jave handler aws/localstack">
       <created>1657638130111</created>
@@ -119,7 +140,14 @@
       <option name="project" value="LOCAL" />
       <updated>1657639721387</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="zad1">
+      <created>1657640011299</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1657640011299</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -144,6 +172,7 @@
     <MESSAGE value="still base - java lambda handler aws/localstack + readme3" />
     <MESSAGE value="still base - java lambda handler aws/localstack + readme4" />
     <MESSAGE value="still base - java lambda handler aws/localstack + readme5" />
-    <option name="LAST_COMMIT_MESSAGE" value="still base - java lambda handler aws/localstack + readme5" />
+    <MESSAGE value="zad1" />
+    <option name="LAST_COMMIT_MESSAGE" value="zad1" />
   </component>
 </project>
