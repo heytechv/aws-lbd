@@ -1,0 +1,1 @@
+aws lambda create-event-source-mapping --function-name sqsListener --batch-size 5 --maximum-batching-window-in-seconds 60  --event-source-arn arn:aws:sqs:eu-central-1:000000000000:MojaKolejka --endpoint-url http://localhost:4566

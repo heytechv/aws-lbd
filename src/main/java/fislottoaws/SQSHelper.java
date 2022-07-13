@@ -8,6 +8,8 @@ import com.amazonaws.services.sqs.AmazonSQSClientBuilder;
 import com.amazonaws.services.sqs.model.QueueNameExistsException;
 import com.amazonaws.services.sqs.model.SendMessageRequest;
 
+import javax.jms.MessageConsumer;
+
 // https://docs.aws.amazon.com/sdk-for-java/v1/developer-guide/examples-sqs-messages.html
 public class SQSHelper {
 
@@ -18,7 +20,6 @@ public class SQSHelper {
                 .withDelaySeconds(2);
         sqs.sendMessage(sendMessageRequest);
     }
-
 
     public static AmazonSQS prepareSQS() {
         AwsClientBuilder.EndpointConfiguration config = new AwsClientBuilder.EndpointConfiguration(Config.S3_ENDPOINT, Config.AWS_REGION);

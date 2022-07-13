@@ -4,9 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c64b4e80-753a-42a4-8c65-60c09f1ee4c4" name="Changes" comment="zad1 - kolejka SQS dziala (tworzy gdy nie istnieje)">
+    <list default="true" id="c64b4e80-753a-42a4-8c65-60c09f1ee4c4" name="Changes" comment="zad1 - kolejka SQS dziala (tworzy gdy nie istnieje) ok">
+      <change afterPath="$PROJECT_DIR$/aws_cmds/sqs/1_lambda_sqsFunc_create.bat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/aws_cmds/sqs/2_event_sqsFunc_register.bat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/fislottoaws/SqsHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aws_cmds/sqs_create.bat" beforeDir="false" afterPath="$PROJECT_DIR$/aws_cmds/sqs/sqs_create.bat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aws_cmds/sqs_delete.bat" beforeDir="false" afterPath="$PROJECT_DIR$/aws_cmds/sqs/sqs_delete.bat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aws_cmds/sqs_receive.bat" beforeDir="false" afterPath="$PROJECT_DIR$/aws_cmds/sqs/sqs_receive.bat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aws_cmds/sqs_send.bat" beforeDir="false" afterPath="$PROJECT_DIR$/aws_cmds/sqs/sqs_send.bat" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/fislottoaws/BucketHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fislottoaws/BucketHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fislottoaws/SQSHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fislottoaws/SQSHelper.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,15 +61,20 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/mwlocka/fis_sst_staz_4_aws/kodNowy_github/aws-lbd/aws_cmds",
+    "last_opened_file_path": "C:/Users/mwlocka/fis_sst_staz_4_aws/kodNowy_github/aws-lbd",
     "nodejs_package_manager_path": "npm"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\mwlocka\fis_sst_staz_4_aws\kodNowy_github\aws-lbd" />
+      <recent name="C:\Users\mwlocka\fis_sst_staz_4_aws\kodNowy_github\aws-lbd\aws_cmds\dla_sqs" />
       <recent name="C:\Users\mwlocka\fis_sst_staz_4_aws\kodNowy_github\aws-lbd\aws_cmds" />
       <recent name="C:\Users\mwlocka\fis_sst_staz_4_aws\kodNowy_github\aws-lbd\aws-lbd" />
       <recent name="C:\Users\mwlocka\fis_sst_staz_4_aws\kodNowy_github\aws-lbd\aws-lbd\src" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\mwlocka\fis_sst_staz_4_aws\kodNowy_github\aws-lbd\aws_cmds\dla_sqs" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="fislottoaws" />
@@ -75,7 +89,7 @@
       <option name="presentableId" value="Default" />
       <updated>1657636968905</updated>
       <workItem from="1657636970820" duration="201000" />
-      <workItem from="1657637241332" duration="13010000" />
+      <workItem from="1657637241332" duration="21821000" />
     </task>
     <task id="LOCAL-00001" summary="still base - jave handler aws/localstack">
       <created>1657638130111</created>
@@ -140,7 +154,14 @@
       <option name="project" value="LOCAL" />
       <updated>1657650562731</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="zad1 - kolejka SQS dziala (tworzy gdy nie istnieje) ok">
+      <created>1657651250002</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1657651250002</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -167,6 +188,7 @@
     <MESSAGE value="still base - java lambda handler aws/localstack + readme5" />
     <MESSAGE value="zad1" />
     <MESSAGE value="zad1 - kolejka SQS dziala (tworzy gdy nie istnieje)" />
-    <option name="LAST_COMMIT_MESSAGE" value="zad1 - kolejka SQS dziala (tworzy gdy nie istnieje)" />
+    <MESSAGE value="zad1 - kolejka SQS dziala (tworzy gdy nie istnieje) ok" />
+    <option name="LAST_COMMIT_MESSAGE" value="zad1 - kolejka SQS dziala (tworzy gdy nie istnieje) ok" />
   </component>
 </project>

@@ -16,6 +16,7 @@ import com.amazonaws.services.sqs.AmazonSQS;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
+import javax.jms.MessageConsumer;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
@@ -39,9 +40,6 @@ public class BucketHandler implements RequestHandler<S3Event, String> {
 
         // Prepare bucket connection?
         AmazonS3 bucketClient = S3BucketHelper.prepareBucketClient();
-
-        // Prepare SQS
-        AmazonSQS sqs = SQSHelper.prepareSQS();
 
         // Get object (file) content from bucket
         S3Object obj = bucketClient.getObject(new GetObjectRequest(bucket, key));
@@ -88,6 +86,9 @@ public class BucketHandler implements RequestHandler<S3Event, String> {
         logger.log(jsonResult+"\n");
 
         // Send to SQS queue
+        // Prepare SQS
+        AmazonSQS sqs = SQSHelper.prepareSQS();
+
         logger.log("Wysylam na kolejke SQS...\n");
         String sqsMainUrl = SQSHelper.createSQSifNeeded(sqs, Config.SQS_MAIN_NAME);
         SQSHelper.send(sqs, sqsMainUrl, jsonResult);
