@@ -12,7 +12,7 @@ _____________
 
 ## Docker/localhost
 ### 1. Instalujemy AWS CLI (localhost)
-Instalujemy `aws cli` na swoim kompie (bedziemy komendami sie laczyc z aws/localstack na dockerze).
+Instalujemy `aws cli` na swoim kompie (będziemy komendami się łączyć z aws/localstack na docker).
 
 ### 2. docker-compose.yml
 Potrzebujemy localstack
@@ -45,24 +45,24 @@ services:
    - "./docker_tmp:/tmp/localstack"
    - "/var/run/docker.sock:/var/run/docker.sock"
 ```
-Docker domyslnie tworzy siec, ktora ma nazwe:<br/>
+Docker domyślnie tworzy siec, która ma nazwę:<br/>
 `katalogpowyzejgdziedocker_default`
 <br/>Dlatego:<br/>
 `LAMBDA_DOCKER_NETWORK=katalogpowyzejgdziedocker_default`
-<br/>Nasz przyszly plik javowy (ktory stworzymy nizej) localstack uruchamia w osobnym dockerze, dlatego musimy temu nowemu kontenerowi pokazac jakie bedzie ip localstacka:<br/>
+<br/>Nasz przyszły plik java (który stworzymy niżej) localstack uruchamia w osobnym docker, dlatego musimy temu nowemu kontenerowi pokazać jakie będzie ip localstack:<br/>
 `HOSTNAME_EXTERNAL=localstack`
 
 ### 3. Run docker
 `docker compose up`
 
 ## Java (Bucket Event Handler)
-### UWAGA! localstack wymaga .zip pliku, w ktorym znajduje sie katalog lib z zaleznosciami oraz sciezka z nasza klasa (co i jak jest opisane ponizej).
+### UWAGA! localstack wymaga .zip pliku, w którym znajduje się katalog lib z zależnościami oraz ścieżką z naszą klasą (co i jak jest opisane poniżej).
 
 #### Przydatne linki:
-- https://codetinkering.com/localstack-s3-lambda-example-docker/ - odbieranie pliku (jako tako dziala ale nie dla localstack bo maven zly)
+- https://codetinkering.com/localstack-s3-lambda-example-docker/ - odbieranie pliku (jako tako działa ale nie dla localstack bo maven zly)
 - https://examples.javacodegeeks.com/software-development/amazon-aws/tutorial-use-aws-lambda-s3-real-time-data-processing/
-- https://medium.com/@mengjiannlee/local-deployment-of-aws-lambda-spring-cloud-function-using-sam-local-and-localstack-dc7669110906 - struktura plikow w projekcie
-- http://whirlysworld.blogspot.com/2016/03/aws-lambda-java-deployment-maven-build.html - LINK KTORY ROZWIAZAL WSZYSTKIE PROBLEMY
+- https://medium.com/@mengjiannlee/local-deployment-of-aws-lambda-spring-cloud-function-using-sam-local-and-localstack-dc7669110906 - struktura plików w projekcie
+- http://whirlysworld.blogspot.com/2016/03/aws-lambda-java-deployment-maven-build.html - LINK KTÓRY ROZWIĄZAŁ WSZYSTKIE PROBLEMY
 
 ### 1. Tworzymy nowy projekt maven.
 
@@ -139,7 +139,7 @@ public class BucketHandler implements RequestHandler<S3Event, Void> {
     }
 }
 ```
-#### WAZNE! Wyzej moje dane, wiec uzupelnic `new BasicAWSCredentials(accessKey, secretKey)`, `AWS_REGION` regionem z dockera oraz `S3_ENDPOINT` jako `nazwa_dockera:port_dockera`.
+#### WAŻNE! Wyżej moje dane, wiec uzupełnić `new BasicAWSCredentials(accessKey, secretKey)`, `AWS_REGION` regionem z docker oraz `S3_ENDPOINT` jako `nazwa_dockera:port_dockera`.
 
 ### 3. MAVEN - konfiguracja
 Tworzymy plik `src/assembly/lambda_deployment_package_assembly.xml`.<br/>
@@ -177,7 +177,7 @@ Tworzymy plik `src/assembly/lambda_deployment_package_assembly.xml`.<br/>
     </dependencySets>
 </assembly>
 ```
-Okej, teraz zawartosc pliku mavena<br/>
+Okej, teraz zawartość pliku maven<br/>
 *pom.xml:*
 ```xml
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -302,13 +302,13 @@ aws --endpoint-url=http://localhost:4566 --region eu-central-1 s3 ls
 
 aws lambda create-function --endpoint-url http://localhost:4566 --function-name processCsv --runtime java11 --handler fislottoaws.BucketHandler --region eu-central-1 --zip-file fileb://..\target\java-basic-1.0-SNAPSHOT-lambda_deployment_package_assembly.zip --role arn:aws:iam::12345:role/ignoreme
 ```
-Paramatery:<br/>
-- `--function-name processCsv` - jak ma sie nazywac nasza funkcja na aws(localstack)
+Parametry:<br/>
+- `--function-name processCsv` - jak ma się nazywać nasza funkcja na aws(localstack)
 - `--runtime java11` - java8/java11
 - `--handler fislottoaws.BucketHandler` - klasa handler
 - `--zip-file fileb:sciezka_do_naszego_pliku.zip` - wygenerowany zip
 
-Wynikiem wywolania komendy bedzie cos w tym stylu:
+Wynikiem wywołania komendy będzie coś w tym stylu:
 ```json
 {
     "FunctionName": "processcsv",
@@ -321,8 +321,8 @@ Wynikiem wywolania komendy bedzie cos w tym stylu:
 ```
 
 Potrzebne nam tylko `FunctionArn`.<br/><br/>
-Tworzymy plik, ktory bedzie sluzyl do zarejestrowania eventu, o nazwie np. *s3hook.json* w np. katalogu glownym (tam gdzie *pom.xml*)
- i dajemy w `LambdaFunctionArn` to co wyzej nam zwrocilo oraz eventy, ktore chcemy obslugiwac.<br/>
+Tworzymy plik, który będzie służył do zarejestrowania eventu, o nazwie np. *s3hook.json* w np. katalogu głównym (tam gdzie *pom.xml*)
+ i dajemy w `LambdaFunctionArn` to co wyżej nam zwróciło oraz eventy, które chcemy obsługiwać.<br/>
 *s3hook.json:*
 ```json
 {
@@ -339,7 +339,7 @@ Tworzymy plik, ktory bedzie sluzyl do zarejestrowania eventu, o nazwie np. *s3ho
 ```
 
 _______________________________________
-(Jako ciekawostka daje plik do usuwania stworzonej wczesniej funkcji *2_lambda_delete.bat:*)
+(Jako ciekawostka daje plik do usuwania stworzonej wcześniej funkcji *2_lambda_delete.bat:*)
 ```bat
 :: https://codetinkering.com/localstack-s3-lambda-example-docker/
 
@@ -347,29 +347,29 @@ aws lambda delete-function --endpoint-url http://localhost:4566 --function-name 
 ```
 
 ### 7. AWS (register event)
-Potrzebujemy plik z podpunktu wyzej, wywolujemy:<br/>
+Potrzebujemy plik z podpunktu wyżej, wywołujemy:<br/>
 *3_event_register.bat:*
 ```bat
 aws s3api put-bucket-notification-configuration --bucket testbucket --notification-configuration file://../s3hook.json --endpoint-url http://localhost:4566 --region eu-central-1
 ```
 Parametry:
-- `--notification-configuration file://../s3hook.json` - tutaj nasz plik z podpunktu wyzej
+- `--notification-configuration file://../s3hook.json` - tutaj nasz plik z podpunktu wyżej
 
 ### 8. AWS (lambda invoke/call)
-Super. Mamy wszystko, teraz mozemy przetestowac nasz event BucketHandler wysylajac plik na server aws/localstack.<br/>
-Tworzymy plik np. *samplefile.txt* i wywolujemy:<br/>
+Super. Mamy wszystko, teraz możemy przetestować nasz event BucketHandler wysyłając plik na server aws/localstack.<br/>
+Tworzymy plik np. *samplefile.txt* i wywołujemy:<br/>
 *4_lambda_invoke.bat:*
 ```bat
 aws s3 cp ../samplefile.txt s3://testbucket/samplefile.txt --endpoint-url http://localhost:4566 --region eu-central-1
 ```
 Parametry:
-- `../samplefile.txt s3://testbucket/samplefile.txt` - sciezka do naszego pliku lokalnie oraz sciezka gdzie ma byc (w jakim bucket) na serwerze
+- `../samplefile.txt s3://testbucket/samplefile.txt` - ścieżka do naszego pliku lokalnie oraz ścieżka gdzie ma byc (w jakim bucket) na serwerze
 
 ### 9. View file using browser (Optional)
 `http://localhost:4566/testbucket/samplefile.txt`
 
 
 # FAQ
-1. Mam blad w dockerze `java.lang.NoClassDefFoundError` lub `ClassNotFoundException`
-> Jak napisalem wyzej w `UWAGA`, localstack nie przyjmuje jarow, nawet shaded idk czemu, musi byc zip.
-Przejrzyj dokumentacje jeszcze raz i skopiuj mavena, potem `mvn clean package`
+1. Mam błąd w docker `java.lang.NoClassDefFoundError` lub `ClassNotFoundException`
+> Jak napisałem wyżej w `UWAGA`, localstack nie przyjmuje plików jar, nawet shaded idk czemu, musi byc zip.
+Przejrzyj dokumentacje jeszcze raz i skopiuj maven, potem `mvn clean package`
