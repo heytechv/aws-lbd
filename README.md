@@ -8,6 +8,11 @@ Komendy aws cli:
 5. `aws_cmds/sqs/2_event_sqsFunc_register.bat`
 6. `aws_cmds/4_lambda_invoke.bat`
 
+Lub Terraform:
+1. `cd terraform`
+2. `terraform apply` -> yes
+3. `aws_cmds/4_lambda_invoke.bat`
+
 # Zadanie
 ### Tresc zadania
 > Napisać funkcje lambda, która będzie konsumować plik z S3 (CSV), mapowować do formatu JSON i przekazywać na SQS.<br/>

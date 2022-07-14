@@ -8,8 +8,9 @@ public class Kupon {
 
     private List<Integer> liczbyList = new ArrayList<>();
 
-    public Kupon(Integer... liczby) {
-        this.liczbyList.addAll(Arrays.asList(liczby));
+    public Kupon(List<Integer> liczbyList) {
+//        this.liczbyList.addAll(Arrays.asList(liczby));
+        this.liczbyList = liczbyList;
     }
 
     public List<Integer> getLiczbyList() { return liczbyList; }

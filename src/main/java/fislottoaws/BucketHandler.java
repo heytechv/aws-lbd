@@ -21,8 +21,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -58,14 +57,32 @@ public class BucketHandler implements RequestHandler<S3Event, String> {
             while ((line=br.readLine())!=null) {
                 matcher = pattern.matcher(line);
                 if (matcher.matches()) {
-                    kuponList.add(new Kupon(
-                            Integer.parseInt(matcher.group(1)),
-                            Integer.parseInt(matcher.group(2)),
-                            Integer.parseInt(matcher.group(3)),
-                            Integer.parseInt(matcher.group(4)),
-                            Integer.parseInt(matcher.group(5)),
-                            Integer.parseInt(matcher.group(6))
-                    ));
+
+                    Map<String, Integer> map = new LinkedHashMap<>();
+                    map.put(matcher.group(1), Integer.parseInt(matcher.group(1)));
+                    map.put(matcher.group(2), Integer.parseInt(matcher.group(2)));
+                    map.put(matcher.group(3), Integer.parseInt(matcher.group(3)));
+                    map.put(matcher.group(4), Integer.parseInt(matcher.group(4)));
+                    map.put(matcher.group(5), Integer.parseInt(matcher.group(5)));
+                    map.put(matcher.group(6), Integer.parseInt(matcher.group(6)));
+
+                    if (map.values().size() != 6) {
+                        logger.log("[Error] Liczby nie moga sie powtarzac: '"+line+"'\n");
+                        continue;
+                    }
+
+                    kuponList.add(new Kupon(new ArrayList<>(map.values())));
+
+//                    kuponList.add(new Kupon(
+//                            Integer.parseInt(matcher.group(1)),
+//                            Integer.parseInt(matcher.group(2)),
+//                            Integer.parseInt(matcher.group(3)),
+//                            Integer.parseInt(matcher.group(4)),
+//                            Integer.parseInt(matcher.group(5)),
+//                            Integer.parseInt(matcher.group(6))
+//                    ));
+
+
                 } else {
                     logger.log("[Error] Blad z kuponem: '"+line+"'\n");
                 }

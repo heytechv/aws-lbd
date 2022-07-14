@@ -4,9 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c64b4e80-753a-42a4-8c65-60c09f1ee4c4" name="Changes" comment="ok">
+    <list default="true" id="c64b4e80-753a-42a4-8c65-60c09f1ee4c4" name="Changes" comment="poprawki">
+      <change afterPath="$PROJECT_DIR$/terraform/main.tf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kupon.csv" beforeDir="false" afterPath="$PROJECT_DIR$/kupon.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fislottoaws/BucketHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fislottoaws/BucketHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fislottoaws/Kupon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fislottoaws/Kupon.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,16 +50,16 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/mwlocka/fis_sst_staz_4_aws/kodNowy_github",
-    "nodejs_package_manager_path": "npm"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/mwlocka/fis_sst_staz_4_aws/kodNowy_github&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\mwlocka\fis_sst_staz_4_aws\kodNowy_github\aws-lbd" />
@@ -80,7 +84,8 @@
       <option name="presentableId" value="Default" />
       <updated>1657636968905</updated>
       <workItem from="1657636970820" duration="201000" />
-      <workItem from="1657637241332" duration="25059000" />
+      <workItem from="1657637241332" duration="28702000" />
+      <workItem from="1657795095492" duration="8050000" />
     </task>
     <task id="LOCAL-00001" summary="still base - jave handler aws/localstack">
       <created>1657638130111</created>
@@ -166,7 +171,14 @@
       <option name="project" value="LOCAL" />
       <updated>1657789618415</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="poprawki">
+      <created>1657790075737</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1657790075737</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -196,6 +208,7 @@
     <MESSAGE value="zad1 - kolejka SQS dziala (tworzy gdy nie istnieje) ok" />
     <MESSAGE value="zad1 - kolejka SQS listener" />
     <MESSAGE value="ok" />
-    <option name="LAST_COMMIT_MESSAGE" value="ok" />
+    <MESSAGE value="poprawki" />
+    <option name="LAST_COMMIT_MESSAGE" value="poprawki" />
   </component>
 </project>
