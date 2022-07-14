@@ -4,9 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c64b4e80-753a-42a4-8c65-60c09f1ee4c4" name="Changes" comment="poprawki readme">
+    <list default="true" id="c64b4e80-753a-42a4-8c65-60c09f1ee4c4" name="Changes" comment="still base - java lambda handler aws/localstack + readme4">
+      <change afterPath="$PROJECT_DIR$/Kris/01_bucket_s3.sh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Kris/helpers/kupon.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Kris/helpers/s3hook.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Kris/helpers/samplefile.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Kris/localstack.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,9 +25,22 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <favorite-branches>
+      <branch-storage>
+        <map>
+          <entry type="LOCAL">
+            <value>
+              <list>
+                <branch-info repo="$PROJECT_DIR$" source="zad1_sqs-K" />
+              </list>
+            </value>
+          </entry>
+        </map>
+      </branch-storage>
+    </favorite-branches>
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="zad1" />
+        <entry key="$PROJECT_DIR$" value="zad1_sqs" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -53,17 +70,18 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "TF_FMT": "false",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/mwlocka/fis_sst_staz_4_aws/kodNowy_github",
-    "nodejs_package_manager_path": "npm"
+    "last_opened_file_path": "/home/kris/Workspace/Idea/Michal/2022-07-01_Staz/aws-lbd/Kris/helpers",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "aws"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/Kris/helpers" />
+      <recent name="$PROJECT_DIR$" />
       <recent name="C:\Users\mwlocka\fis_sst_staz_4_aws\kodNowy_github\aws-lbd" />
       <recent name="C:\Users\mwlocka\fis_sst_staz_4_aws\kodNowy_github\aws-lbd\aws_cmds\dla_sqs" />
       <recent name="C:\Users\mwlocka\fis_sst_staz_4_aws\kodNowy_github\aws-lbd\aws_cmds" />
-      <recent name="C:\Users\mwlocka\fis_sst_staz_4_aws\kodNowy_github\aws-lbd\aws-lbd" />
-      <recent name="C:\Users\mwlocka\fis_sst_staz_4_aws\kodNowy_github\aws-lbd\aws-lbd\src" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\mwlocka\fis_sst_staz_4_aws\kodNowy_github\aws-lbd\aws_cmds\dla_sqs" />
@@ -200,7 +218,19 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="zad1_sqs-K" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
@@ -223,5 +253,9 @@
     <MESSAGE value="poprawki + terraform" />
     <MESSAGE value="poprawki readme" />
     <option name="LAST_COMMIT_MESSAGE" value="poprawki readme" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>
