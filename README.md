@@ -1,5 +1,13 @@
 ### UWAGA! Kasowac docker_tmp bo farmazony (stare eventy)
 
+Komendy aws cli:
+1. `aws_cmds/1_bucket_S3_create.bat`
+2. `aws_cmds/2_lambda_create.bat`
+3. `aws_cmds/3_event_register.bat`
+4. `aws_cmds/sqs/1_lambda_sqsFunc_create.bat`
+5. `aws_cmds/sqs/2_event_sqsFunc_register.bat`
+6. `aws_cmds/4_lambda_invoke.bat`
+
 # Zadanie
 ### Tresc zadania
 > Napisać funkcje lambda, która będzie konsumować plik z S3 (CSV), mapowować do formatu JSON i przekazywać na SQS.<br/>

@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c64b4e80-753a-42a4-8c65-60c09f1ee4c4" name="Changes" comment="zad1 - kolejka SQS listener">
-      <change afterPath="$PROJECT_DIR$/README_basic.md" afterDir="false" />
+    <list default="true" id="c64b4e80-753a-42a4-8c65-60c09f1ee4c4" name="Changes" comment="ok">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,7 +52,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/mwlocka/fis_sst_staz_4_aws/kodNowy_github/aws-lbd",
+    "last_opened_file_path": "C:/Users/mwlocka/fis_sst_staz_4_aws/kodNowy_github",
     "nodejs_package_manager_path": "npm"
   }
 }]]></component>
@@ -80,7 +80,7 @@
       <option name="presentableId" value="Default" />
       <updated>1657636968905</updated>
       <workItem from="1657636970820" duration="201000" />
-      <workItem from="1657637241332" duration="24572000" />
+      <workItem from="1657637241332" duration="25059000" />
     </task>
     <task id="LOCAL-00001" summary="still base - jave handler aws/localstack">
       <created>1657638130111</created>
@@ -159,7 +159,14 @@
       <option name="project" value="LOCAL" />
       <updated>1657716229711</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="ok">
+      <created>1657789618415</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1657789618415</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -188,6 +195,7 @@
     <MESSAGE value="zad1 - kolejka SQS dziala (tworzy gdy nie istnieje)" />
     <MESSAGE value="zad1 - kolejka SQS dziala (tworzy gdy nie istnieje) ok" />
     <MESSAGE value="zad1 - kolejka SQS listener" />
-    <option name="LAST_COMMIT_MESSAGE" value="zad1 - kolejka SQS listener" />
+    <MESSAGE value="ok" />
+    <option name="LAST_COMMIT_MESSAGE" value="ok" />
   </component>
 </project>
