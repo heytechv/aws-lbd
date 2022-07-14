@@ -1,5 +1,9 @@
 ### UWAGA! Kasowac docker_tmp bo farmazony (stare eventy)
 
+Docker (localstack):
+1. `docker compose up -d`
+2. `docker down`
+
 Komendy aws cli:
 1. `aws_cmds/1_bucket_S3_create.bat`
 2. `aws_cmds/2_lambda_create.bat`
@@ -13,6 +17,7 @@ Lub Terraform:
 2. (`terraform init`)
 3. `terraform apply` -> yes
 4. `aws_cmds/4_lambda_invoke.bat`
+
 
 # Zadanie
 ### Tresc zadania
