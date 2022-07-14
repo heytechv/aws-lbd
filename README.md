@@ -10,8 +10,9 @@ Komendy aws cli:
 
 Lub Terraform:
 1. `cd terraform`
-2. `terraform apply` -> yes
-3. `aws_cmds/4_lambda_invoke.bat`
+2. (`terraform init`)
+3. `terraform apply` -> yes
+4. `aws_cmds/4_lambda_invoke.bat`
 
 # Zadanie
 ### Tresc zadania
