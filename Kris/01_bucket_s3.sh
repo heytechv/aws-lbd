@@ -9,15 +9,15 @@
 # gnome-terminal -- bash -c "(cd ../; docker compose up)"; ./01_bucket_s3.sh                                            # automatycznie uruchamiam dicker i ten skrypt. Działa
 
 #-----------------------------------------------------------------------------------------------------------------------
-
+source sh/init.sh
 #--- helpers ---
 echoWithoutDebug() { set +x; echo -e "$@"; set -x; }
 
-#--- usage ---
-usage() {
-  echo "Usage: $0 [functions]:"
-  cat $0 | grep -o "^aws\w*" | sed "s#^${1}#  ${1}#g"; exit
-}
+##--- usage ---
+#usage() {
+#  echo "Usage: $0 [functions]:"
+#  cat $0 | grep -o "^aws\w*" | sed "s#^${1}#  ${1}#g"; exit
+#}
 
 #--- initEnv ---
 initEnv() {
@@ -34,7 +34,13 @@ initEnv() {
 
   awsLocal s3 ls || { sleep 2; awsLocal s3 ls || { echo "Error: Nie udało się uruchomić Docker Compose localstack"; exit 1; } }
 
-  echo -e "\n--- Włączam debugowanie ---"; set -x                                                                       # debugowanie
+  $parm_debug && { echo -e "\n--- Włączam debugowanie ---"; set -x; }                                                   # debugowanie
+}
+
+#--- Robocze -----------------------------------------------------------------------------------------------------------
+awsRob01() {
+  awsLocal s3 ls                                                   # format polecenia
+#  echo "Rob01ddd"
 }
 
 #--- functions ---------------------------------------------------------------------------------------------------------
@@ -119,5 +125,6 @@ initEnv
 #awsLambdaInvoke
 #awsSqsQueue
 
-awsMichal
+#awsMichal
 
+echo "--- $toRunFunction ---"; "$toRunFunction"

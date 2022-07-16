@@ -52,5 +52,5 @@ docker_tmp
 .vagrant/
 
 # User-specific stuff
-.idea/**/workspace.xml
-.idea/**/shelf
+.idea/workspace.xml
+.idea/shelf
