@@ -26,7 +26,7 @@ initEnv() {
  # alias awsLocal="aws --endpoint-url=http://localhost:4566 --region eu-central-1 "                                     # alias definicja lokalnie
 
  # Alias Definicja, zakres obowiązywania także na zewnątrz funkcji
-  awsLocal() { aws "$@" --endpoint-url http://localhost:4566 --region eu-central-1; read -r -t 2 -p "Breakpoint: "; }                                   # Alias definiowany wewnątrz funkcji: https://github.com/koalaman/shellcheck/wiki/SC2262
+  awsLocal() { aws "$@" --endpoint-url http://localhost:4566 --region eu-central-1; } # read -r -t 2 -p "Breakpoint: "; # Alias definiowany wewnątrz funkcji: https://github.com/koalaman/shellcheck/wiki/SC2262
 
   docker compose ps | grep -q "^aws-lbd.*running" || {
     echo INFO: Nie uruchomiono: Docker Compose localstack, Uruchamiam w nowym oknie z logami...
