@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c64b4e80-753a-42a4-8c65-60c09f1ee4c4" name="Changes" comment="still base - java lambda handler aws/localstack + readme4">
+    <list default="true" id="c64b4e80-753a-42a4-8c65-60c09f1ee4c4" name="Changes" comment="Kris/sh OK">
       <change beforePath="$PROJECT_DIR$/Kris/01_bucket_s3.sh" beforeDir="false" afterPath="$PROJECT_DIR$/Kris/01_bucket_s3.sh" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -248,7 +248,8 @@
     <MESSAGE value="poprawki + terraform" />
     <MESSAGE value="poprawki readme" />
     <MESSAGE value="still base - java lambda handler aws/localstack + readme4" />
-    <option name="LAST_COMMIT_MESSAGE" value="still base - java lambda handler aws/localstack + readme4" />
+    <MESSAGE value="Kris/sh OK" />
+    <option name="LAST_COMMIT_MESSAGE" value="Kris/sh OK" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
