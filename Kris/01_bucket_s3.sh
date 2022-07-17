@@ -9,7 +9,10 @@
 # gnome-terminal -- bash -c "(cd ../; docker compose up)"; ./01_bucket_s3.sh                                            # automatycznie uruchamiam dicker i ten skrypt. Działa
 
 #-----------------------------------------------------------------------------------------------------------------------
+declare -A parH      #; parH_str="";                                                                                           # parH: associate array imported from init.sh przez string (ponowna deklaracja z ustawionymi w init.sh wartościami), dlatego że associate attay nie można przenieść bezpośrednio
 source sh/init.sh
+#eval "$parH_str"; # echo "${parH[@]}"; exit                                                                             # import parH a tak na prawdę ponowna deklaracja z wartościami
+
 #--- helpers ---
 echoWithoutDebug() { set +x; echo -e "$@"; set -x; }
 
@@ -30,18 +33,15 @@ initEnv() {
 
   docker compose ps | grep -q "^aws-lbd.*running" || {
     echo INFO: Nie uruchomiono: Docker Compose localstack, Uruchamiam w nowym oknie z logami...
-    gnome-terminal -- bash -c "(cd ../; docker compose up)"; }
+    gnome-terminal -- bash -c "(cd ../; docker compose up)"; sleep 2; }
 
-  awsLocal s3 ls || { sleep 2; awsLocal s3 ls || { echo "Error: Nie udało się uruchomić Docker Compose localstack"; exit 1; } }
+  awsLocal s3 ls || { echo "Error: Nie udało się uruchomić Docker Compose localstack"; exit 1; }
 
-  $parm_debug && { echo -e "\n--- Włączam debugowanie ---"; set -x; }                                                   # debugowanie
+  ${parH[debug]} && { echo -e "\n--- Włączam debugowanie ---"; set -x; }                                                   # debugowanie
 }
 
 #--- Robocze -----------------------------------------------------------------------------------------------------------
-awsRob01() {
-  awsLocal s3 ls                                                   # format polecenia
-#  echo "Rob01ddd"
-}
+awsLs() { awsLocal s3 ls; }                                                   # format polecenia
 
 #--- functions ---------------------------------------------------------------------------------------------------------
 awsBucket() {
@@ -118,7 +118,7 @@ awsMichal() {                                                                   
 }
 
 #=======================================================================================================================
-initEnv
+#init
 #awsBucket
 #awsLambda
 #awsEventRegister
@@ -126,5 +126,11 @@ initEnv
 #awsSqsQueue
 
 #awsMichal
+#exit
 
-echo "--- $toRunFunction ---"; "$toRunFunction"
+#=======================================================================================================================
+${parH[init]}        && { initEnv;        }  # true|false && ...
+[ "${parH[toRun]}" ] && { ${parH[toRun]}; }  # ""|"coś"
+
+
+
