@@ -7,16 +7,17 @@
 
 #---------------------------------------------------------------------------------------------------
 function Skladnia () {
-  [ "$1" == "Err01" ] && echo "Error: Brakuje parametru 'funkcja'"
+  [ "$1" == "Err01" ] && echoError "Brakuje parametru 'funkcja'"
 cat << ENDcat
 Składnia: $(echo $0 | sed -e 's/.\///') funkcja [-q|--quiet] [-h, --help]
   Funkcje dostępne:
 $(functionList| sed "s#^${2}#    ${2}#g")
   Parametry:
-    +d[|-d]     - debug
-    -q, --quiet - ciche wyjście
-    -l, --list  - lista funkcji
-    -h, --help  - pomoc
+    +i[|-i], ++init[|--init]   - init docker compose before
+    +d[|-d], ++debug[|--debug] - debug
+    -q,      --quiet           - ciche wyjście
+    -l,      --list            - lista funkcji
+    -h,      --help            - pomoc
 ENDcat
 }
 
@@ -32,29 +33,40 @@ readFromPipe() { result=""; if [ -p /dev/stdin ]; then result=$(cat); return 1; 
 #---------------------------------------------------------------------------------------------------
 function Parametry () {
   p0=$1; p1=$2; p2=$3; p3=$4; params=$@;  															# p0=$1; p1=$2; p2=$3; shift; params=$@;
-  parm_domain="tee.flawon.eu"
 
-  case "$p0" in
-   #"router")                        ;;
-    "-h"|"--help") Skladnia; exit $? ;;
-    *)             res=$(functionList| grep "$p0\$"); [ "$res" ] || { Skladnia "Err01"; exit $?; } ;;
-  esac
+#  case "$p0" in
+#   #"router")                        ;;
+#    "-h"|"--help") Skladnia; exit $? ;;
+#    *)             res=$(functionList| grep "$p0\$"); [ "$res" ] || { Skladnia "Err01"; exit $?; } ;;
+#  esac
 
-  parm_debug=true; parm_quiet=false; parm_list=false
+  parm_init=true; parm_debug=true; parm_quiet=false; parm_list=false; parm_other=()
+  parH=([init]=true [debug]=true [quiet]=false [list]=false [toRun]= ); parm_other=()                                             #; declare -p parH; echo "parH_keys=${!parH[@]} ; parH_vals=${parH[@]} ; parH_n=${#parH[@]}" ### parH_str=$(declare -p parH); # associate Array -> string, żeby mogło przejść do pattern file. W pattern file import: eval "$parH_str"
   if [ "$#" == "0" ]; then Skladnia; exit $?; fi
   while [ $# -ne 0 ]; do                         													# czyta parametry z wiersza poleceń i przypisuje je do odpowiednich zmiennych
     case "$1" in
      #"--domain"|"-d") shift; parm_domain=$1; if [ "$1" == "" ]; then Skladnia; fi ;;
-      "-d")                   parm_debug=false                                     ;;
-      "--quiet" |"-q")        parm_quiet=true                                      ;;
-      "--list"  |"-l")        parm_list=true                                       ;;
+      -i|+i|--init|++init)   [[ $1 =~ -i|--init  ]] && parH[init]=false    ;;
+      -d|+d|--debug|++debug) [[ $1 =~ -d|--debug ]] && parH[debug]=false   ;;
+      --quiet|-q)            parH[quiet]=true                              ;;
+      --list |-l)            parH[list]=true                               ;;
+      -h|--help)             Skladnia; exit $?                            ;;
+      *)                     parm_other+=("$1")                           ;;                                            # parametry pozostałe
     esac
     shift
   done
-  #echo -e "p0:$p0 p1:$p1 p2:$p2 p3:$p3"; exit
+  res=$(functionList| grep "${parm_other[*]}\$");
+  # shellcheck disable=SC2015
+  [ "${#parm_other[@]}" == "1" ] && [ "$res" ] || { Skladnia "Err01"; exit $?; }
+  parH[toRun]="$res"
+
+  # echo -e "p0:$p0 p1:$p1 p2:$p2 p3:$p3 parm_othet=${parm_other[*]}"; #exit
+  # for p in "${parm_other[@]}"; do echo $p; done
+
+  # parH_str=$(declare -p parH); # associate Array -> string, żeby mogło przejść do pattern file. W pattern file import: eval "$parH_str"
 }
 
-#--- usage ------------------------------------------------------------------------------------------------
+#--- colors ------------------------------------------------------------------------------------------------------------
 initColors() {
   RS="\033[0m"    # reset
   HC="\033[1m"    # hicolor
@@ -65,15 +77,13 @@ initColors() {
   FGRN="\033[32m" # foreground green
   FYEL="\033[33m" # foreground yellow
 }
+echoError  () { echo -e "\033[31mError\033[0m: $*\n" ; }
+echoWarning() { echo -e "\033[33mWarning\033[0m: $*\n" ; }
+echoInfo   () { echo -e "\033[32mWarning\033[0m: $*\n" ; }
 
-#--- usage ------------------------------------------------------------------------------------------------
+#--- funkcje -----------------------------------------------------------------------------------------------------------
 functionList() { cat $0 | grep -o "^aws\w*"; }
 
-#--- usage ---
-usage() {
-  echo "Usage: $0 [functions]:"
-  cat $0 | grep -o "^aws\w*" | sed "s#^${1}#  ${1}#g"; exit
-}
 funkcja1() {
   return
 }
@@ -94,27 +104,30 @@ funkcja2() {
 
 Parametry "$@";
 
-#cd $(dirname "$0")																					                                        # cd aktualny folder
-$parm_quiet && exec > /dev/null 2>&1                                                                # ukrywa wyjście echo w całym skrypcie
-$parm_list  && { functionList       ; exit  ; }
-[ "$p0" ]   && { toRunFunction="$p0"; return; }
-exit
+#cd $(dirname "$0")																					                                                            # cd aktualny folder
+
+${parH[quiet]} && exec > /dev/null 2>&1             # true|false && ...                                                                    # ukrywa wyjście echo w całym skrypcie
+${parH[list]}  && { functionList       ; exit  ; }  # true|false && ...
+
+return
+
+#[ "$p0" ]   && { toRunFunction="$p0"; return; }
+#exit
 
 
-case "${parm_array[0]}" in
-  "ssh"     )    sshRun      "ssh"     ;;
-  "sshfs"   )    sshRun      "sshfs"   ;;
-  "sshLocal")    sshRun      "sshLocal";;
-  "sshTor"  )    sshRun      "sshTor"  ;;
-  "sshfsTor")    sshRun      "sshfsTor";;
-  "umount"  )    sshRun      "umount"  ;;
-  "adb"     )    sshRun      "adb"     ;;
-  "rsync"   )    sshRun      "rsync"   ;;
-  "rsyncTor")    sshRun      "rsyncTor";;
-  "pcConfig")    pcConfigRun "pcConfig";;
-  *)                                   ;;
-esac
-
+#case "${parm_array[0]}" in
+#  "ssh"     )    sshRun      "ssh"     ;;
+#  "sshfs"   )    sshRun      "sshfs"   ;;
+#  "sshLocal")    sshRun      "sshLocal";;
+#  "sshTor"  )    sshRun      "sshTor"  ;;
+#  "sshfsTor")    sshRun      "sshfsTor";;
+#  "umount"  )    sshRun      "umount"  ;;
+#  "adb"     )    sshRun      "adb"     ;;
+#  "rsync"   )    sshRun      "rsync"   ;;
+#  "rsyncTor")    sshRun      "rsyncTor";;
+#  "pcConfig")    pcConfigRun "pcConfig";;
+#  *)                                   ;;
+#esac
 
 <<COMMENT1
  0. debugowanie:	bash -x ./skrypt.sh # pokazuje ślad wykonanania skryptu							# set parametry: http://linuxcommand.org/lc3_man_pages/seth.html
@@ -176,7 +189,18 @@ esac
 
 	# Pobranie tablicy jako parametru $: skrypt.sh "a b c" "2" lub $: a=("a" "b" "c"); skrypt.sh "$(echo ${a[@]})" "2" # pobranie ze skryptu: a=($1); b=$2
  7b Tablice asocjacyjne kompleksowo 5: https://www.artificialworlds.net/blog/2012/10/17/bash-associative-array-examples/
-
+   declare -A animals; animals=( ["moo"]="cow" ["woof"]="dog"); animals["cat"]="miau"; declare -p animals; echo ${animals[@]}
+   Wynik:
+     declare -A animals=([woof]="dog" [moo]="cow" [cat]="miau" )
+     dog cow miau
+   declare -A MAP; MAP[bar]="baz"; declare -x serialized_array=$(mktemp); declare -p MAP > "${serialized_array}"; source "${serialized_array}"; echo "map: ${MAP[@]}"; declare -p MAP
+   wynik:
+     map: baz
+     declare -A MAP=([bar]="baz" )
+   def_tab='declare -A tab=([a]=a1 [b]=b1)'; eval "$def_tab"; echo "${tab[@]}"; declare -p tab
+   wynik:
+     b1 a1
+     declare -A tab=([b]="b1" [a]="a1" )
  8. Zmienne: [ -z ${var+x} ] && echo "zmienna nieustawiona"; var=; [ -z ${var} ] && echo "zmienna nieustawiona albo pusta"; [ -z ${var-x} ] && echo "zmienna ustawiona"; # https://stackoverflow.com/questions/3601515/how-to-check-if-a-variable-is-set-in-bash
 	valName="wartosc"; declare -n ref="valName"; echo ref:"$ref"	# wynik: ref:wartosc	# dostęp do zmiennej przez nazwę jej
 	SKŁADNIA
