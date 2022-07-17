@@ -5,12 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c64b4e80-753a-42a4-8c65-60c09f1ee4c4" name="Changes" comment="still base - java lambda handler aws/localstack + readme4">
-      <change afterPath="$PROJECT_DIR$/Kris/01_bucket_s3.sh" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Kris/helpers/kupon.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Kris/helpers/s3hook.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Kris/helpers/samplefile.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Kris/localstack.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Kris/01_bucket_s3.sh" beforeDir="false" afterPath="$PROJECT_DIR$/Kris/01_bucket_s3.sh" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,10 +35,11 @@
     </favorite-branches>
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="zad1_sqs" />
+        <entry key="$PROJECT_DIR$" value="zad1_sqs-K" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RESET_MODE" value="HARD" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -63,18 +59,18 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "TF_FMT": "false",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "/home/kris/Workspace/Idea/Michal/2022-07-01_Staz/aws-lbd/Kris/helpers",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "aws"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;TF_FMT&quot;: &quot;false&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/kris/Workspace/Idea/Michal/2022-07-01_Staz/aws-lbd/Kris/helpers&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;aws&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/Kris/helpers" />
@@ -242,7 +238,6 @@
     <MESSAGE value="still base - java lambda handler aws/localstack + readme" />
     <MESSAGE value="still base - java lambda handler aws/localstack + readme2" />
     <MESSAGE value="still base - java lambda handler aws/localstack + readme3" />
-    <MESSAGE value="still base - java lambda handler aws/localstack + readme4" />
     <MESSAGE value="still base - java lambda handler aws/localstack + readme5" />
     <MESSAGE value="zad1" />
     <MESSAGE value="zad1 - kolejka SQS dziala (tworzy gdy nie istnieje)" />
@@ -252,7 +247,8 @@
     <MESSAGE value="poprawki" />
     <MESSAGE value="poprawki + terraform" />
     <MESSAGE value="poprawki readme" />
-    <option name="LAST_COMMIT_MESSAGE" value="poprawki readme" />
+    <MESSAGE value="still base - java lambda handler aws/localstack + readme4" />
+    <option name="LAST_COMMIT_MESSAGE" value="still base - java lambda handler aws/localstack + readme4" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
